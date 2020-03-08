@@ -51,3 +51,6 @@ def calculate():
         return json.dumps(response), 200
     except Exception:
         return "internal error", 500
+
+if __name__ == '__main__':
+    app.run()
