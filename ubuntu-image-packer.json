@@ -17,15 +17,15 @@
     {
       "type": "shell",
       "inline":[
-        "sleep 30"
-        "sudo apt update",
-        "sudo apt install nginx"
+         "sleep 30",
+         "sudo apt update",
+         "sudo apt install nginx"
         ]
     },
     {
       "type": "file",
       "source": "./nginx.default",
       "destination": "/etc/nginx/nginx.conf"
-    },
+    }
   ]
 }
