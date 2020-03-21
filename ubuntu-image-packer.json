@@ -23,17 +23,19 @@
   }],
   "provisioners": [
     {
+      "type": "file",
+      "source": "./nginx.default",
+      "destination": "/tmp/nginx.conf"
+    },
+    {
       "type": "shell",
       "inline":[
          "sleep 30",
          "sudo apt update",
-         "sudo apt install nginx"
+         "sudo apt-get install -y nginx",
+         "sudo cp /tmp/nginx.conf /etc/nginx/sites-available/default",
+         "sudo systemctl restart nginx",
         ]
-    },
-    {
-      "type": "file",
-      "source": "./nginx.default",
-      "destination": "/etc/nginx/nginx.conf"
     }
   ]
 }
