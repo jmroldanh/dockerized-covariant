@@ -40,6 +40,22 @@
          "sudo systemctl start docker",
          "sg docker -c 'docker run hello-world'"
         ]
-    }
-  ]
+    },
+    {
+      "type": "file",
+      "source": "./Dockerfile",
+      "destination": "~/Dockerfile"
+    },
+    {
+      "type": "file",
+      "source": "./requirements.txt",
+      "destination": "~/requirements.txt"
+    },
+    {
+      "type": "shell",
+      "inline":[
+         "sg docker -c 'docker build -t covariant:latest ~/'"
+        ]
+     }
+   ]
 }
