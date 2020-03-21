@@ -36,9 +36,9 @@
          "sudo cp /tmp/nginx.conf /etc/nginx/sites-available/default",
          "sudo systemctl restart nginx",
          "sudo apt-get install -y docker.io",
+         "sudo usermod -G docker ubuntu",
          "sudo systemctl start docker",
-         "sudo systemctl status docker",
-         "docker run hello-world"
+         "sg docker -c 'docker run hello-world'"
         ]
     }
   ]
