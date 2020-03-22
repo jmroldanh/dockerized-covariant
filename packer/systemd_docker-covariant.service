@@ -1,0 +1,12 @@
+[Unit]
+Description=Covariant Container
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker run --restart=always -p 127.0.0.1:8080:5000  covariant:latest
+ExecStop=/usr/bin/docker stop -t 2 covariant
+
+[Install]
+WantedBy=local.target
