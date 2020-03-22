@@ -38,23 +38,34 @@
          "sudo apt-get install -y docker.io",
          "sudo usermod -G docker ubuntu",
          "sudo systemctl start docker",
-         "sg docker -c 'docker run hello-world'"
+         "sg docker -c 'docker run hello-world'",
+         "mkdir ~/docker"
         ]
     },
     {
       "type": "file",
       "source": "./Dockerfile",
-      "destination": "~/Dockerfile"
+      "destination": "~/docker/Dockerfile"
     },
     {
       "type": "file",
       "source": "./requirements.txt",
-      "destination": "~/requirements.txt"
+      "destination": "~/docker/requirements.txt"
+    },
+    {
+      "type": "file",
+      "source": "./main.py",
+      "destination": "~/docker/main.py"
+    },
+    {
+      "type": "file",
+      "source": "./main.ini",
+      "destination": "~/docker/main.ini"
     },
     {
       "type": "shell",
       "inline":[
-         "sg docker -c 'docker build -t covariant:latest ~/'"
+         "sg docker -c 'docker build -t covariant:latest ~/docker'",
         ]
      }
    ]
