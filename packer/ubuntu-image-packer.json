@@ -44,22 +44,22 @@
     },
     {
       "type": "file",
-      "source": "./Dockerfile",
+      "source": "./docker/Dockerfile",
       "destination": "~/docker/Dockerfile"
     },
     {
       "type": "file",
-      "source": "./requirements.txt",
+      "source": "./docker/requirements.txt",
       "destination": "~/docker/requirements.txt"
     },
     {
       "type": "file",
-      "source": "./main.py",
+      "source": "./docker/main.py",
       "destination": "~/docker/main.py"
     },
     {
       "type": "file",
-      "source": "./main.ini",
+      "source": "./docker/main.ini",
       "destination": "~/docker/main.ini"
     },
     {
