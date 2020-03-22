@@ -63,23 +63,18 @@
       "destination": "~/docker/main.ini"
     },
     {
+      "type": "file",
+      "source": "./systemd_docker-covariant.service",
+      "destination": "~/systemd_docker-covariant.service"
+    },
+    {
       "type": "shell",
       "inline":[
-         "sg docker -c 'docker build -t covariant:latest ~/docker'"
+         "sg docker -c 'docker build -t covariant:latest ~/docker'",
+         "sudo cp /home/ubuntu/systemd_docker-covariant.service /etc/systemd/system/docker-covariant.service",
+         "sudo systemctl daemon-reload",
+         "sudo systemctl enable docker-covariant.service"
         ]
-     },
-     {
-       "type": "file",
-       "source": "./systemd_docker-covariant.service",
-       "destination": "~/systemd_docker-covariant.service"
-     },
-     {
-       "type": "shell",
-       "inline":[
-          "sudo cp /home/ubuntu/systemd_docker-covariant.service /etc/systemd/system/docker-covariant.service",
-          "sudo systemctl daemon-reload",
-          "sudo systemctl enable docker-covariant.service",
-         ]
-      }
+     }
    ]
 }
